@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@tanstack/react-query": "^5.0.5",
+    "@tanstack/react-query-devtools": "^5.1.0"
+  },
+  "devDependencies": {
+    "date-fns": "^2.30.0"
+  }
+}
