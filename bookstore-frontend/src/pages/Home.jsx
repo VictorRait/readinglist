@@ -19,7 +19,7 @@ function Home() {
 	} = useBookByUser();
 
 	useEffect(() => {
-		const storedUser = JSON.parse(localStorage.getItem("user"));
+		const storedUser = JSON.parse(localStorage.getItem("user")) || user;
 		if (storedUser) {
 			setUser(storedUser);
 		} else {

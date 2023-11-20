@@ -51,6 +51,7 @@ router.get("/profile", authenticateToken, async (req, res) => {
 });
 router.post("/register", async (req, res) => {
 	try {
+		console.log(req.body);
 		if (!req.body.userName || !req.body.email || !req.body.password) {
 			return res
 				.status(400)

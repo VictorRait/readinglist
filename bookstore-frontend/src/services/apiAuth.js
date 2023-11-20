@@ -1,4 +1,5 @@
 import axios from "axios";
+import Register from "../components/Register";
 import {HOST_URL} from "../config";
 
 // Create an auth object to store the user's authentication token
@@ -33,3 +34,21 @@ export function logout() {
 }
 // Export the auth object so it can be used in other parts of your application
 export {auth};
+
+export async function register({data}) {
+	try {
+		const {username, email, password} = data; // Destructure 'username'
+		const userName = username;
+		console.log(data);
+		const res = await axios.post(`${HOST_URL}auth/register`, {
+			email,
+			password,
+			userName,
+		});
+
+		console.log(res);
+		return res;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+}

@@ -11,6 +11,7 @@ import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
 import Login from "./pages/Login";
 import {AuthProvider} from "./context/AuthContext";
+import Register from "./components/Register";
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -37,6 +38,7 @@ function App() {
 								<Route path="/books/delete/:id" element={<DeleteBook />} />
 							</Route>
 							<Route path="/auth" element={<Login />} />
+							<Route path="/register" element={<Register />} />
 						</Routes>
 					</SnackbarProvider>
 				</BrowserRouter>

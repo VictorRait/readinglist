@@ -4,7 +4,7 @@ import {HOST_URL} from "../config";
 export async function getBooksbyUser({user}) {
 	try {
 		const token = localStorage.getItem("Authorization");
-		console.log(token);
+
 		if (!token) {
 			throw new Error("Authentication token not found.");
 		}
@@ -18,7 +18,6 @@ export async function getBooksbyUser({user}) {
 		const books = resUser.data.books;
 		const booksUser = resUser.data.booksOwned;
 
-		console.log(resUser, books, booksUser);
 		return {books, booksUser};
 	} catch (err) {
 		throw new Error(err.message);
