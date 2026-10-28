@@ -19,7 +19,7 @@ router.post("/", async (request, response) => {
 			author: request.body.author,
 			publishYear: request.body.publishYear,
 			status: "reading",
-			image: image || "",
+			image: request.body.image || "",
 		};
 
 		// Create a new book and get the generated _id
