@@ -34,8 +34,8 @@ router.post("/", async (request, response) => {
 		// Save the owner with the updated books array
 		// await owner.save();
 
-		if (user) {
-			const owner = await Owner.findOne({ user });
+		if (request.body.user) {
+			const owner = await Owner.findOne({ user: request.body.user });
 			if (owner) {
 				owner.books.push(createdBook);
 				await owner.save();

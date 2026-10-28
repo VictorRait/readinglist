@@ -18,7 +18,11 @@ const bookSchema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		image: {
+			type: String,
+			default: "",
+		},
 	},
-	{timestamps: true}
+	{ timestamps: true },
 );
 export const Book = mongoose.model("Cat", bookSchema);
